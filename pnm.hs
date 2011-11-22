@@ -61,6 +61,8 @@ writePNMHeader fn (width, height) = do
 
 
 -- macht Seek zur richtigen Position und schreibt Binärdaten
+-- bevor Bild fertig ist, muss überall hingeschrieben worden sein
+-- ansonsten könnte auch hier zum Ende geseekt werden.
 writeRegionToFile :: String -> Region -> IO ()
 writeRegionToFile fn r = do
                          h <- openFile fn ReadWriteMode
