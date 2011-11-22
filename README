@@ -1,1 +1,5 @@
 Kram für Haskellprojekt
+
+@TODO:
+* als bytestring ausgeben
+* schreiben ab offset
