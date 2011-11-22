@@ -108,9 +108,11 @@ testsequenz = do
  writeRegionToFile "vier.pnm" b4
  
  saveAsPNG "vier.pnm"
+ 
  -- auch möglich:
- let b = farbigesTestBild 100 100 (55,55,55)
+ let b = farbigesTestBild 100 100 (95,55,55)
  writePNMHeader "graudannbunt.pnm" (getScreen b)
- let brechtsunten50quadratabmitte = farbigeTestRegion (getScreen b) (floor((fromIntegral(getWidth b))/2), floor((fromIntegral(getHeight b))/2)) 50 50 (0,255,0)
+ writeRegionToFile "graudannbunt.pnm" b
+ let brechtsunten50quadratabmitte = farbigeTestRegion (getScreen b) (floor((fromIntegral(getWidth b)-75)/2), floor((fromIntegral(getHeight b)-40)/2)) 50 50 (0,255,0)
  writeRegionToFile "graudannbunt.pnm" brechtsunten50quadratabmitte
  saveAsPNG "graudannbunt.pnm"
